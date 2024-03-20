@@ -26,7 +26,12 @@ Erro deletar(Tarefa t[], int *pos) {
   return OK;
 }
 Erro listar(Tarefa t[], int pos) {
-  printf("funcao listar tarefas");
+  if (pos == 0)
+    return SEM_TAREFAS;
+
+  for (int i = 0; i < pos; i++)
+    printTarefa(t[i]);
+
   return OK;
 }
 Erro salvar(Tarefa t[], int pos, int tamanho) {
@@ -37,12 +42,10 @@ Erro carregar(Tarefa t[], int *pos, int tamanho) {
   printf("funcao carregar tarefas");
   return OK;
 }
-
 void printTarefa(Tarefa t) {
   printf("\nPrioridade: %d\tCategoria: %s", t.prioridade, t.categoria);
   printf("Descricao: %s\n", t.descricao);
 }
-
 void clearBuffer() {
   int c;
   while ((c = getchar()) != '\n' && c != EOF) {
