@@ -3,3 +3,14 @@ typedef struct Tarefa {
   char categoria[100];
   char descricao[300];
 } Tarefa;
+
+typedef enum Erro {
+  OK,
+  ABRIR,
+  FECHAR,
+  LER,
+  ESCREVER,
+  MAX_TAREFAS,
+  SEM_TAREFAS,
+  NAO_ENCONTRADO
+} Erro;
