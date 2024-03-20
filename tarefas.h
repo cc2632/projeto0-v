@@ -1,3 +1,5 @@
+#define TOTAL 100
+
 typedef struct Tarefa {
   int prioridade;
   char categoria[100];
