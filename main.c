@@ -6,6 +6,9 @@ int main() {
 
   Tarefa tarefas[TOTAL];
   int pos = 0;
+  Erro e = carregar(tarefas, &pos, TOTAL);
+  if (e == ABRIR || e == LER || e == FECHAR)
+    pos = 0;
 
   do {
     printf("\nMenu principal\n");
@@ -23,9 +26,10 @@ int main() {
       deletar(tarefas, &pos);
     } else if (opcao == 3) {
       listar(tarefas, pos);
-    } else if (opcao == 0)
+    } else if (opcao == 0) {
       printf("Sair...\n");
-    else
+      salvar(tarefas, pos, TOTAL);
+    } else
       printf("Opcao invalida\n");
 
   } while (opcao != 0);
