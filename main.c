@@ -7,9 +7,13 @@ int main() {
   Tarefa tarefas[TOTAL];
   int pos = 0;
   Erro e = carregar(tarefas, &pos, TOTAL);
-  if (e == ABRIR || e == LER || e == FECHAR) {
+  if(e == ABRIR){
     pos = 0;
-    printf("Erro ao carregar as tarefas\n");
+    printf("Arquivo nao encontrado\n");
+  }
+  else if (e == LER || e == FECHAR){
+    pos = 0;
+    printf("Erro ao ler as tarefas do arquivo\n");
   }
 
   do {
